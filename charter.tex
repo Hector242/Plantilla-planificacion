@@ -23,8 +23,8 @@ codirector, % Uncomment to add a codirector to the title page
 \director{Nombre del Director}
 \pertenenciaDirector{pertenencia} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
-\pertenenciaCoDirector{FIUBA}
+\codirector{Maximiliano Aballay} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+\pertenenciaCoDirector{INTA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Dr. Gerardo Sánchez}
@@ -122,23 +122,24 @@ El Instituto Nacional de Tecnología Agropecuaria (INTA) es un organismo estatal
 
 La fenómica hace referencia a la obtención de un gran caudal de datos de las características de las plantas, lo que se denomina el fenotipo de la planta. Esta disciplina está en auge en la actualidad debido a sus aplicaciones potenciales. Por un lado, habilita el mejoramiento a gran escala debido a que es necesario vincular una gran cantidad de datos genéticos con datos fenotípicos para identificar la función de los genes. Por otro lado, si se incluyen otros conjuntos de datos como son los climáticos, permite realizar predicciones precisas sobre el comportamiento de las variedades, el cual es necesario para implementar lo que se conoce como agricultura de precisión. Sin embargo, la fruticultura no ha dado el salto hacia la fenómica.
 
-En la  Estación Experimental Agropecuaria (EEA) de San Pedro se ha logrado secuenciar el ADN de más de 250 variedades de duraznero (Aballay et al., 2021, Scientific Reports) disponiendo de una base de datos genómica de 75 gigabase (Gb) de ADN. Esta base permite identificar genes que controlan características del duraznero mediante algoritmos de inteligencia artificial (IA). Además, se dispone de datos climáticos diarios que se toman de forma automatica y estos incluyen: las temperaturas medias, precipitaciones, horas de frío, radiación, etc. Esta información se combina con los datos genómicos y posteriormente, con modelos de IA se predice el comportamiento de las variedades en escenarios climáticos futuros.
+En la  Estación Experimental Agropecuaria (EEA) de San Pedro se ha logrado secuenciar el ADN de más de 250 variedades de duraznero (Aballay et al., 2021, Scientific Reports) disponiendo de una base de datos genómica de 75 gigabase (Gb) de ADN. Esta base permite identificar genes que controlan características del duraznero mediante algoritmos de inteligencia artificial (IA). Además, se dispone de datos climáticos diarios que se toman de forma automatica que incluyen: las temperaturas medias, precipitaciones, horas de frío, radiación, etc. Esta información se combina con los datos genómicos y posteriormente, con modelos de IA se predice el comportamiento de las variedades en escenarios climáticos futuros.
 
-Por otro lado, las heladas primaverales son actualmente el mayor problema de los frutales a nivel mundial. Este fenómeno ocurre cuando las flores abiertas (estado “F”) se someten a temperaturas cercanas a los -2.5 °c. Por lo tanto, es necesario conocer el número de flores que se encuentran en estado vulnerable ante un pronóstico de heladas así como también la densidad de flores. Es del interés del INTA determinar el estado fenológico a campo y mejorar para la tolerancia a heladas. Para esto se hará uso de visión por computadora.
+Por otro lado, las heladas primaverales son actualmente el mayor problema de los frutales a nivel mundial. Este fenómeno ocurre cuando las flores abiertas (estado “F”) se someten a temperaturas cercanas a los -2.5 °c. Por este motivo, es necesario conocer el número de flores que se encuentran en estado vulnerable ante un pronóstico de heladas, así como también la densidad de flores. Es del interés del INTA determinar el estado fenológico a campo y mejorar para la tolerancia a heladas. Para esto se hará uso de la IA y la visión por computadora.
 
 La visión por computadora es un subdominio de la IA que permite a las maquinas imitar el sistema visual del ser humano. De esta forma, es posible extraer información a partir de imagenes. 
 
-En la actualidad existen algoritmos capaces de detectar y clasificar de forma efectiva plantas a través de imagenes. Estos se han utilizado para una gran variedad de aplicaciones, como es el reconocimiento de enfermedades en plantas. Sin embargo, no existe un sistema para la extracción de estados fenológicos de la flor de varetas de durazneros.
+En la actualidad existen algoritmos capaces de detectar y clasificar de forma efectiva plantas a través de imagenes. Estos algoritmos se han utilizado para una gran variedad de aplicaciones, como es el caso de reconocimiento de enfermedades en plantas. Sin embargo, no existe un sistema para la extracción de estados fenológicos de la flor de durazneros.
 
-La presente propuesta permitirá automatizar la toma de características de la flor de varetas de durazneros, a partir de fotos para aumentar el caudal de datos y mejorar los modelos de IA existentes.
+La presente propuesta permitirá automatizar la toma de características de la flor de durazneros, a partir de fotos. De esta forma, se logrará aumentar el caudal de datos y mejorar los modelos de IA existentes.
 
 \section{1.2 Marco de la propuesta}
 \label{sec:descripcion}
 
-La ejecución de este proyecto va alineado con el interés del INTA de determinar el estado de la flor de los durazneros a partir de imagenes.
+La ejecución de este proyecto va alineada con el interés del INTA de determinar el estado de la flor de los durazneros a partir de imagenes.
 
-Las fotos de varetas que se disponen se detallan en la tabla 1. Parte del conjunto de datos que se utilizará para el entrenamiento para determinar las características se indican en la tabla. Se deberá evaluar diferentes modelos de IA a fin de definir el óptimo para esta tarea. Se deberá considerar la existencia de bases de datos de imágenes y/o modelos pre-entrenados disponibles.
+Las especificaciones de las fotos de varetas que se disponen se detallan en la tabla 1. Por otro lado, las características a determinar se indican en la tabla 2. Se deberá evaluar diferentes modelos de IA a fin de definir el óptimo para esta tarea. Se deberá considerar la existencia de bases de datos de imágenes y/o modelos pre-entrenados disponibles.
 
+\renewcommand{\tablename}{Tabla}
 \begin{table}[ht]
 \begin{center}
 \begin{tabularx}{\textwidth}{| c | c | c | X | }
@@ -147,61 +148,42 @@ Las fotos de varetas que se disponen se detallan en la tabla 1. Parte del conjun
 \multicolumn{4}{ |c| }{Características de las fotos de duraznos} \\ \hline
 Formato & Numero & Tamaño & Observaciones \\ \hline
 JPG     & 250    & 1 MB   & Fotos de varetas de duraznero con flores en           diferentes estados fenológicos. La mayoría está en estado “F” pero también están en estado “E” y “G”. Cada foto tiene una regla. Cada foto tiene entre 10 a 12 varetas. \\ \hline
-\rowcolor[HTML]{C0C0C0}
-\multicolumn{4}{ |c| }{Características de interés a ser determinadas} \\ \hline
-
 \end{tabularx}
-\caption{Coches disponibles}
+\caption{}
 \label{tab:coches}
 \end{center}
 \end{table}
 
+\renewcommand{\tablename}{Tabla}
+\begin{table}[ht]
+\begin{center}
+\begin{tabularx}{\textwidth}{| c | X | }
+\hline
+\rowcolor[HTML]{C0C0C0}
+\multicolumn{2}{ |c| }{Características de interés a ser determinadas} \\ \hline
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
+  N° de Flores totales  & Presencia de Flor. \\ \hline
+  Tipo de Flor          & En las fotos existen dos tipos de flores: campanulácea y rosásea. \\ \hline
+  Estado Fenológico     & Discriminar entre estado “F” o flor abierta respecto a los demás estados. (“E” flor cerrada o “G” flor sin pétalos) \\ \hline
+  Densidad de flores    & Determinar la cantidad de flores por cm de vareta \\ \hline
+  
+\end{tabularx}
+\caption{}
+\end{center}
+\end{table}
 
-El objetivo es que el lector en una o dos páginas entienda de qué trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
-
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cúal es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
-
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+La solución que se propone hará uso de un modelo de detección de objetos óptimo para el problema planteado. Además, para la clasificación de flores, se utilizará un modelo pre-entrenado que se ajustará a las fotos proporcionadas. Al final, se tendrá como resultado todos los requisitos que se piden en la tabla 2. La figura 1 muestra esta solución a alto nivel.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=1\textwidth]{./Figuras/Tesis.drawio.png}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
 
-\vspace{25px}
-
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
-
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
- 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces solo dejarla en el rol más importante. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, no debe ser colocado también como miembro del equipo.
-
 
 \begin{table}[ht]
 %\caption{Identificación de los interesados}
@@ -210,75 +192,50 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Auspiciante   & \clientename      &\empclientename  &    -    	\\ \hline
+Cliente       & \clientename      &\empclientename	&    -   	\\ \hline
+Impulsor      & \clientename      &\empclientename  &    -   	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Colaboradores & \cosupname        & \empclientename &    -  	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Equipo        & \cosupname \newline & \empclientename &    -     \\ \hline
+Usuario final & INTA              &     INTA        &      -  	\\ \hline
 \end{tabularx}
 \end{table}
-
-El Director suele ser uno de los Orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
-\begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
-\end{itemize}
-
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
 
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
+El propósito de este proyecto es desarrollar un algoritmo que identifique flores de los durazneros y sus estados a partir de fotos de varetas, para aumentar el caudal de datos y mejorar los modelos de IA existentes.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+El proyecto incluye:
+\begin{itemize}
+	\item El preprocesamiento de las fotos para entrenar el modelo.
+	\item La selección del modelo a entrenar.
+	\item La elaboración del notebook de pruebas en Python.
+	\item La implementación local del modelo.
+\end{itemize}
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
-
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
-
+El proyecto no incluye:
+\begin{itemize}
+	\item La recolección de datos/fotos.
+	\item La integración con otros modelos que utilice el cliente.
+\end{itemize}
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
-
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
-
+Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item Se contará con suficientes fotos de veretas para entrenar y evaluar el modelo. 
+	\item Se contará con soporte para temas no referentes al area de inteligencia artificial que se necesiten para la elaboración de este proyecto.
+	\item Se tendrán imagenes con la calidad adecuada para resolver el problema planteado.
+	\item Se contará con los recursos de hardware necesarios para el entrenamiento del modelo.
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
