@@ -7,12 +7,12 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Visión por computadora para la identificación de estados fenelógicos de la flor} 
+\titulo{Identificación de estados fenelógicos de la flor de durazneros mediante visión por computadora} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
-\posgrado{Carrera de Especialización en Intelegencia Artificial}
+\posgrado{Carrera de Especialización en Inteligencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 
@@ -69,11 +69,11 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
-%2      & Se completa hasta el punto 7 inclusive
+1      & Se completa hasta el punto 5 inclusive                 & 5 de septiembre de 2023 \\ \hline
+2      & Aplicación de las correcciones de la revisión 1. \newline
+Se completa hasta el punto 9 inclusive & 12 de septiembre 2023 \\ \hline
 %		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & dd/mm/aaaa \\ \hline
+%		  En distintas líneas \newline                                                    
 %3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
 %4      & Se completa el plan	                                 & dd/mm/aaaa \\ \hline
 \end{tabularx}
@@ -115,29 +115,29 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-El Instituto Nacional de Tecnología Agropecuaria (INTA) es un organismo estatal descentralizado con independencia operativa y financiera, que se encuentra adscrito a la secretaría de agricultura, ganadería y pesca del ministerio de economía de la nación. Este ente nace en 1956 con el objetivo de impulsar la innovación y la transferencia de conocimientos en los sectores agroalimentario, agroindustrial y agropecuario a través de la investigación. Sus aportes permiten potenciar el país y generar nuevas oportunidades para acceder a mercados regionales e internacionales con productos y servicios de alto valor agregado.
+El Instituto Nacional de Tecnología Agropecuaria (INTA) es un organismo estatal descentralizado, con independencia operativa y financiera, que se encuentra adscrito a la Secretaría de Agricultura, Ganadería y Pesca del Ministerio de Economía de la Nación. Este ente nació en 1956 con el objetivo de impulsar la innovación y la transferencia de conocimientos en los sectores agroalimentario, agroindustrial y agropecuario a través de la investigación. Sus aportes permiten potenciar el país y generar nuevas oportunidades para acceder a mercados regionales e internacionales con productos y servicios de alto valor agregado.
 
 \section{1.1 Introducción general}
 \label{sec:descripcion}
 
 La fenómica hace referencia a la obtención de un gran caudal de datos de las características de las plantas, lo que se denomina el fenotipo de la planta. Esta disciplina está en auge en la actualidad debido a sus aplicaciones potenciales. Por un lado, habilita el mejoramiento a gran escala debido a que es necesario vincular una gran cantidad de datos genéticos con datos fenotípicos para identificar la función de los genes. Por otro lado, si se incluyen otros conjuntos de datos como son los climáticos, permite realizar predicciones precisas sobre el comportamiento de las variedades, el cual es necesario para implementar lo que se conoce como agricultura de precisión. Sin embargo, la fruticultura no ha dado el salto hacia la fenómica.
 
-En la  Estación Experimental Agropecuaria (EEA) de San Pedro se ha logrado secuenciar el ADN de más de 250 variedades de duraznero (Aballay et al., 2021, Scientific Reports) disponiendo de una base de datos genómica de 75 gigabase (Gb) de ADN. Esta base permite identificar genes que controlan características del duraznero mediante algoritmos de inteligencia artificial (IA). Además, se dispone de datos climáticos diarios que se toman de forma automatica que incluyen: las temperaturas medias, precipitaciones, horas de frío, radiación, etc. Esta información se combina con los datos genómicos y posteriormente, con modelos de IA se predice el comportamiento de las variedades en escenarios climáticos futuros.
+En la  Estación Experimental Agropecuaria (EEA) de San Pedro se ha logrado secuenciar el ADN de más de 250 variedades de duraznero (Aballay et al., 2021, Scientific Reports) disponiendo de una base de datos genómica de 75 gigabases (Gb) de ADN. Esta base permite identificar genes que controlan características del duraznero mediante algoritmos de inteligencia artificial (IA). Además, se dispone de datos climáticos diarios que se toman de forma automática que incluyen: las temperaturas medias, precipitaciones, horas de frío, radiación, etc. Esta información se combina con los datos genómicos y posteriormente, con modelos de IA se predice el comportamiento de las variedades en escenarios climáticos futuros.
 
-Por otro lado, las heladas primaverales son actualmente el mayor problema de los frutales a nivel mundial. Este fenómeno ocurre cuando las flores abiertas (estado “F”) se someten a temperaturas cercanas a los -2.5 °c. Por este motivo, es necesario conocer el número de flores que se encuentran en estado vulnerable ante un pronóstico de heladas, así como también la densidad de flores. Es del interés del INTA determinar el estado fenológico a campo y mejorar para la tolerancia a heladas. Para esto se hará uso de la IA y la visión por computadora.
+Por otro lado, las heladas primaverales son actualmente el mayor problema de los frutales a nivel mundial. Este fenómeno ocurre cuando las flores abiertas (estado “F”) se someten a temperaturas cercanas a los -2.5 °C. Por este motivo, es necesario conocer el número de flores que se encuentran en estado vulnerable ante un pronóstico de heladas, así como también la densidad de flores. Es del interés del INTA determinar el estado fenológico a campo y mejorar para la tolerancia a heladas. Para lograrlo, se empleará IA y visión por computadora.
 
-La visión por computadora es un subdominio de la IA que permite a las maquinas imitar el sistema visual del ser humano. De esta forma, es posible extraer información a partir de imagenes. 
+La visión por computadora es un subdominio de la IA que permite a las máquinas imitar el sistema visual del ser humano. De esta forma, es posible extraer información a partir de imágenes. 
 
-En la actualidad existen algoritmos capaces de detectar y clasificar de forma efectiva plantas a través de imagenes. Estos algoritmos se han utilizado para una gran variedad de aplicaciones, como es el caso de reconocimiento de enfermedades en plantas. Sin embargo, no existe un sistema para la extracción de estados fenológicos de la flor de durazneros.
+En la actualidad existen algoritmos capaces de detectar y clasificar de forma efectiva plantas a través de imágenes. Estos algoritmos se han utilizado para una gran variedad de aplicaciones, como es el caso de reconocimiento de enfermedades en plantas. Sin embargo, aún no se ha desarrollado un sistema para la extracción de estados fenológicos de la flor de durazneros.
 
 La presente propuesta permitirá automatizar la toma de características de la flor de durazneros, a partir de fotos. De esta forma, se logrará aumentar el caudal de datos y mejorar los modelos de IA existentes.
 
 \section{1.2 Marco de la propuesta}
 \label{sec:descripcion}
 
-La ejecución de este proyecto va alineada con el interés del INTA de determinar el estado de la flor de los durazneros a partir de imagenes.
+La ejecución de este proyecto va alineada con el interés del INTA de determinar el estado de la flor de los durazneros a partir de imágenes.
 
-Las especificaciones de las fotos de varetas que se disponen se detallan en la tabla 1. Por otro lado, las características a determinar se indican en la tabla 2. Se deberá evaluar diferentes modelos de IA a fin de definir el óptimo para esta tarea. Se deberá considerar la existencia de bases de datos de imágenes y/o modelos pre-entrenados disponibles.
+Las especificaciones de las fotos de varetas que se disponen se detallan en la tabla 1. Por otro lado, las características a determinar se indican en la tabla 2. Se deberá evaluar diferentes modelos de IA a fin de definir el óptimo para esta tarea. Se deberá considerar la existencia de bases de datos de imágenes y/o modelos preentrenados disponibles.
 
 \renewcommand{\tablename}{Tabla}
 \begin{table}[ht]
@@ -146,7 +146,7 @@ Las especificaciones de las fotos de varetas que se disponen se detallan en la t
 \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{4}{ |c| }{Características de las fotos de duraznos} \\ \hline
-Formato & Numero & Tamaño & Observaciones \\ \hline
+Formato & Número & Tamaño & Observaciones \\ \hline
 JPG     & 250    & 1 MB   & Fotos de varetas de duraznero con flores en           diferentes estados fenológicos. La mayoría está en estado “F” pero también están en estado “E” y “G”. Cada foto tiene una regla. Cada foto tiene entre 10 a 12 varetas. \\ \hline
 \end{tabularx}
 \caption{}
@@ -163,24 +163,25 @@ JPG     & 250    & 1 MB   & Fotos de varetas de duraznero con flores en         
 \multicolumn{2}{ |c| }{Características de interés a ser determinadas} \\ \hline
 
   N° de Flores totales  & Presencia de Flor. \\ \hline
-  Tipo de Flor          & En las fotos existen dos tipos de flores: campanulácea y rosásea. \\ \hline
-  Estado Fenológico     & Discriminar entre estado “F” o flor abierta respecto a los demás estados. (“E” flor cerrada o “G” flor sin pétalos) \\ \hline
-  Densidad de flores    & Determinar la cantidad de flores por cm de vareta \\ \hline
+  Tipo de flor          & En las fotos existen dos tipos de flores: campanulácea y rosásea. \\ \hline
+  Estado fenológico     & Discriminar entre estado “F” o flor abierta respecto a los demás estados (“E” flor cerrada o “G” flor sin pétalos). \\ \hline
+  Densidad de flores    & Determinar la cantidad de flores por cm de vareta. \\ \hline
   
 \end{tabularx}
 \caption{}
 \end{center}
 \end{table}
 
-La solución que se propone hará uso de un modelo de detección de objetos óptimo para el problema planteado. Además, para la clasificación de flores, se utilizará un modelo pre-entrenado que se ajustará a las fotos proporcionadas. Al final, se tendrá como resultado todos los requisitos que se piden en la tabla 2. La figura 1 muestra esta solución a alto nivel.
+La solución que se propone hará uso de un modelo de detección de objetos óptimo para el problema planteado. Además, para la clasificación de flores, se utilizará un modelo preentrenado que se ajustará a las fotos proporcionadas. Como resultado final, se cumplirán todos los requisitos establecidos en la tabla 2. La figura 1 muestra esta solución a alto nivel.
 
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=1\textwidth]{./Figuras/Tesis.drawio.png}
-\caption{Diagrama en bloques del sistema}
+\caption{Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure}
 
+\pagebreak
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
@@ -232,9 +233,10 @@ El proyecto no incluye:
 Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
 	\item Se contará con suficientes fotos de veretas para entrenar y evaluar el modelo. 
-	\item Se contará con soporte para temas no referentes al area de inteligencia artificial que se necesiten para la elaboración de este proyecto.
-	\item Se tendrán imagenes con la calidad adecuada para resolver el problema planteado.
+	\item Se contará con soporte para temas no referentes al área de inteligencia artificial que se necesiten para la elaboración de este proyecto.
+	\item Se tendrán imágenes con la calidad adecuada para resolver el problema planteado.
 	\item Se contará con los recursos de hardware necesarios para el entrenamiento del modelo.
+	\item El codigo se desarrollará en una notebook de Google Colab.
 \end{itemize}
 
 \section{6. Requerimientos}
