@@ -172,16 +172,18 @@ JPG     & 250    & 1 MB   & Fotos de varetas de duraznero con flores en         
 \end{center}
 \end{table}
 
-La solución que se propone hará uso de un modelo de detección de objetos óptimo para el problema planteado. Además, para la clasificación de flores, se utilizará un modelo preentrenado que se ajustará a las fotos proporcionadas. Como resultado final, se cumplirán todos los requisitos establecidos en la tabla 2. La figura 1 muestra esta solución a alto nivel.
+La solución que se propone hará uso de un modelo preentrenado para la detección de flores. Parte del modelado incluirá el ajuste de este algoritmo a las imágenes proporcionadas por el INTA. Como resultado final, se obtendrá un archivo en formato JSON con todos los datos que se detallan en la tabla 2.
+
+La preparación del dataset será una etapa fundamental del proyecto donde se preprocesarán las imágenes, se etiquetarán y se les aplicará data augmentation. 
+
+La figura 1 muestra esta solución a alto nivel.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=1\textwidth]{./Figuras/Tesis.drawio.png}
+\includegraphics[width=1\textwidth]{./Figuras/Tesis2.drawio.png}
 \caption{Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure}
-
-\pagebreak
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
@@ -195,7 +197,6 @@ La solución que se propone hará uso de un modelo de detección de objetos ópt
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
 Auspiciante   & \clientename      &\empclientename  &    -    	\\ \hline
 Cliente       & \clientename      &\empclientename	&    -   	\\ \hline
-Impulsor      & \clientename      &\empclientename  &    -   	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Colaboradores & Dr. Maximiliano Aballay        & \empclientename &    -  	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
