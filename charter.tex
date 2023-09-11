@@ -1,6 +1,6 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
-codirector, % Uncomment to add a codirector to the title page
+%codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
 
 
@@ -23,8 +23,8 @@ codirector, % Uncomment to add a codirector to the title page
 \director{Nombre del Director}
 \pertenenciaDirector{pertenencia} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{Maximiliano Aballay} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
-\pertenenciaCoDirector{INTA}
+%\codirector{Maximiliano Aballay} para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+%\pertenenciaCoDirector{INTA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
 \cliente{Dr. Gerardo Sánchez}
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en desarrollar un algoritmo que identifique flores y su estado a partir de fotos de varetas, y tendrá un presupuesto preliminar estimado de 600 horas de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en desarrollar un algoritmo que identifique flores y su estado a partir de fotos de varetas, y tendrá un presupuesto preliminar estimado de 610 horas de trabajo y USD 5308 de costos, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -197,9 +197,9 @@ Auspiciante   & \clientename      &\empclientename  &    -    	\\ \hline
 Cliente       & \clientename      &\empclientename	&    -   	\\ \hline
 Impulsor      & \clientename      &\empclientename  &    -   	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores & \cosupname        & \empclientename &    -  	\\ \hline
+Colaboradores & Dr. Maximiliano Aballay        & \empclientename &    -  	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & \cosupname \newline & \empclientename &    -     \\ \hline
+Equipo        & Dr. Maximiliano Aballay \newline & \empclientename &    -     \\ \hline
 Usuario final & INTA              &     INTA        &      -  	\\ \hline
 \end{tabularx}
 \end{table}
@@ -346,65 +346,38 @@ Los entregables del proyecto son:
 \label{sec:wbs}
 
 \begin{enumerate}
-\item Preparación de los datos. (hs)
+\item Preparación de los datos. (150 h)
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas h)
+	\item Análisis preliminar de las imágenes. (30 h)
+	\item Estudio y busqueda de herramientas de etiquetado de elementos en imagenes. (35 h)
+	\item Etiquetado de imagenes. (40 h)
+	\item Aplicar data aumentation. (25 h)
+	\item Aplicar redimensionamiento. (20 h) 
 	\end{enumerate}
-\item Desarrollo del modelo de IA. (hs)
+\item Desarrollo del modelo de IA. (200 h)
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
+	\item Estudio y busqueda de modelos preentrenados. (40 h)
+	\item Estudio de arquitecturas de Deep Learning viables. (40 h)
+	\item Desarrollo de primer modelo usando transfer learning. (40 h)
+	\item Entrenamiento del modelo. (40 h)
+	\item Desarrollo de endpoint. (40 h)
 	\end{enumerate}
-\item Prueba de desempeño del modelo. (hs)
+\item Prueba de desempeño del modelo. (120 h)
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
+	\item Pruebas sobre datos de validación.  (40 h)
+	\item Pruebas sobre el endpoint del modelo. (40 h)
+	\item Ajuste y optimización de hiperparametros. (40 h)
 	\end{enumerate}
-\item Tareas de documentación. (hs)
+\item Tareas de documentación. (140 h)
 	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
-	\end{enumerate}
-\end{enumerate}
-
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
-\begin{enumerate}
-\item Grupo de tareas 1
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 2
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 3
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
+	\item Elaboración de diagramas (20 h)
+	\item Redacción del informe de avance. (40 h)
+	\item Redacción de la memoría final del proyecto (40 h)
+	\item Preparación de presentación del proyecto (40 h)
 	\end{enumerate}
 \end{enumerate}
 
-Cantidad total de horas: (tantas h)
-
-Se recomienda que no haya ninguna tarea que lleve más de 40 h. 
-
-\end{consigna}
+Cantidad total de horas: 610 h.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
