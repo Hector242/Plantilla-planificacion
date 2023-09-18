@@ -7,7 +7,7 @@
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Identificación de estados fenelógicos de la flor de durazneros mediante visión por computadora} 
+\titulo{Identificación de estados fenológicos de la flor de durazneros mediante visión por computadora} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -68,10 +68,12 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-1      & Se completa hasta el punto 5 inclusive                 & 5 de septiembre de 2023 \\ \hline
+0      & Creación del documento.                                 &\fechaInicioName \\ \hline
+1      & Se completa hasta el punto 5 inclusive.                 & 5 de septiembre de 2023 \\ \hline
 2      & Aplicación de las correcciones de la revisión 1. \newline
-Se completa hasta el punto 9 inclusive & 12 de septiembre 2023 \\ \hline
+Se completa hasta el punto 9 inclusive. & 12 de septiembre 2023 \\ \hline
+3      & Aplicación de las correcciones de la revisión 2. \newline
+Se completa hasta el punto 12 inclusive. & 18 de septiembre 2023 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline                                                    
 %3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
@@ -92,7 +94,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en desarrollar un algoritmo que identifique flores y su estado a partir de fotos de varetas, y tendrá un presupuesto preliminar estimado de 610 horas de trabajo y US\$19.710 de costos, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en desarrollar un algoritmo que identifique flores y su estado a partir de fotos de varetas, y tendrá un presupuesto preliminar estimado de 620 horas de trabajo y US\$19.710 de costos, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -149,7 +151,7 @@ Las especificaciones de las fotos de varetas que se disponen se detallan en la t
 Formato & Número & Tamaño & Observaciones \\ \hline
 JPG     & 250    & 1 MB   & Fotos de varetas de duraznero con flores en           diferentes estados fenológicos. La mayoría está en estado “F” pero también están en estado “E” y “G”. Cada foto tiene una regla. Cada foto tiene entre 10 a 12 varetas. \\ \hline
 \end{tabularx}
-\caption{}
+\caption{Características de las fotos de duraznos.}
 \label{tab:coches}
 \end{center}
 \end{table}
@@ -168,7 +170,7 @@ JPG     & 250    & 1 MB   & Fotos de varetas de duraznero con flores en         
   Densidad de flores    & Determinar la cantidad de flores por cm de vareta. \\ \hline
   
 \end{tabularx}
-\caption{}
+\caption{Características de interés a ser determinadas.}
 \end{center}
 \end{table}
 
@@ -246,27 +248,27 @@ Para el desarrollo del presente proyecto se supone que:
 \begin{enumerate}
 	\item Requerimientos funcionales
 		\begin{enumerate}
-			\item El sistema tomará como entrada imagenes de varetas de durazneros en formato JPG.			
-			\item El algoritmo debe detectar la presencia de las varetas de los durazneros e identificar el tipo de flor que posee.			        \item El algoritmo debe identificar el estado fenológico de cada flor de duraznero en la vareta. Este estado puede ser F de flor abierta, E de flor cerrada o G de flor sin petalos. 
-			\item El algoritmo debe determinar la cantidad de flores por centimetro de vareta.
+			\item El sistema tomará como entrada imágenes de varetas de durazneros en formato JPG.			
+			\item El algoritmo debe detectar la presencia de las varetas de los durazneros e identificar el tipo de flor que posee.			        \item El algoritmo debe identificar el estado fenológico de cada flor de duraznero en la vareta. Este estado puede ser F de flor abierta, E de flor cerrada o G de flor sin pétalos. 
+			\item El algoritmo debe determinar la cantidad de flores por centímetro de vareta.
 			\item El sistema debe entregar como resultado un archivo en formato JSON con los datos detectados por el algoritmo.
 			\item El sistema debe funcionar en una computadora local.
 		\end{enumerate}
 	\item Requerimientos de diseño e implementación
 		\begin{enumerate}
 			\item El diseño debe ser modular.
-			\item El algoritmo se elaborará en una notebook de Google Colab, utilizando el lenguaje de  programación Python y librerías de IA correspondientes. 
+			\item El algoritmo se elaborará en una notebook de Google Colab, utilizando el lenguaje de  programación Python y bibliotecas de IA correspondientes. 
 		\end{enumerate}
 	\item Requerimiento de evaluación y prueba
 	\begin{enumerate}
-			\item El modelo se evaluará con imagenes provenientes del mismo dataset de images entregado por el cliente.
-			 \item Las métricas que se utilizarán para la evaluación del modelo serán: mean average precision(mAP), matriz de confusión, precision, recall, F1, acurracy.
+			\item El modelo se evaluará con imágenes provenientes del mismo dataset de imágenes entregado por el cliente.
+			 \item Las métricas que se utilizarán para la evaluación del modelo serán: \textit{mean average precision} (mAP), \textit{matriz de confusión}, \textit{precision}, \textit{recall}, \textit{F1}, \textit{accuracy}.
 		\end{enumerate}
 	\item Requerimientos de documentación
 	\begin{enumerate}
 			\item El funcionamiento del sistema debe estar correctamente explicado y documentado.
-			 \item El código en la notebook estará correctamente comentado como parte de buenas practicas del desarrollo de software.
-			 \item La documentación por README.md en un repositorio tambien podría ser sugerida (opcional).
+			 \item El código en la notebook estará correctamente comentado como parte de buenas prácticas del desarrollo de software.
+			 \item Inclusión de documentación en un repositorio, mediante un archivo README.md (opcional).
 		\end{enumerate}
 \end{enumerate}
 
@@ -276,8 +278,8 @@ Para el desarrollo del presente proyecto se supone que:
 Se identifican los siguientes roles:
 
 \begin{itemize}
-	\item Científico. Tiene dominio en el problema a resolver. Es el que hará uso de los resultados proporcionados por el algotimo. Es el que utiliza y proporciona las fotos de las varetas de durazneros. 
-	\item Desarrollador de IA: Es el que se encarga de mantener el modelo y de desarrollar nuevas funcionalidades.
+	\item Científico: tiene dominio en el problema a resolver. Es el que hará uso de los resultados proporcionados por el algoritmo. Es el que utiliza y proporciona las fotos de las varetas de durazneros. 
+	\item Desarrollador de IA: es el que se encarga de mantener el modelo y de desarrollar nuevas funcionalidades.
 \end{itemize}
 
 Para estimar el puntaje de cada historia de usuario se consideran tres aspectos:
@@ -308,26 +310,26 @@ Donde el puntaje final es el número de Fibonacci más próximo a la suma de los
 Se definen las siguientes historias de usuario:
 
 \begin{itemize}
-	\item Como científico, quiero extraer las características de flores de durazneros a través de imagenes usando un modelo de IA, para automatizar este proceso que actualmente lo hacemos de forma manual.
+	\item Como científico, quiero extraer las características de flores de durazneros a través de imágenes usando un modelo de IA, para automatizar este proceso que actualmente se lo realiza de forma manual.
 	\begin{itemize}
 	\item Esfuerzo (3): porque el tiempo que se requiere para el desarrollo del modelo y su correcto funcionamiento puede ser medianamente largo.
-	\item Complejidad (5): porque se requiere de un buen conocimiento en modelos de aprendizaje basados en vision por computadora. 
+	\item Complejidad (5): porque se requiere de un sólido conocimiento en modelos de aprendizaje basados en visión por computadora. 
 	\item Riesgo (5): porque se pueden presentar imprevistos con las imagenes proporcionadas y compatibilidad con el modelo.
-	\item Story Point: 13
+	\item Story Point: 13.
 \end{itemize}
-	\item Como desarrollador de IA, quiero contar con un código ordenado que siga las buenas practicas del desarrollo del software, que este bien documentado y que este correctamente versionado, para poder continuar con su mantenimiento y mejora a través del tiempo.
+	\item Como desarrollador de IA, quiero contar con un código ordenado que siga las buenas prácticas del desarrollo del software, que esté bien documentado y que esté correctamente versionado, para poder continuar con su mantenimiento y mejora a través del tiempo.
 	\begin{itemize}
 	\item Esfuerzo (3): porque el tiempo que se emplea en acomodar el código y dejar todo bien documentado es moderado.
 	\item Complejidad (3): porque puede incluir una refactorización del código original hecho en la notebook.
 	\item Riesgo (1): porque no se esperan imprevistos en esta etapa.
-	\item Story Point: 8
+	\item Story Point: 8.
 \end{itemize}
 	\item Como científico, quiero que el modelo de aprendizaje se pueda ejecutar de forma local en mi computadora de escritorio o laptop para no hacer uso de servidores externos que puedan incrementar el costo del proyecto.
 	\begin{itemize}
-	\item Esfuerzo (3): porque el tiempo que se emplea en crear un endpoint local es moderado.
-	\item Complejidad (3): porque existen librerías que te arman endpoints simples de forma muy rapida e intuitiva.
+	\item Esfuerzo (3): porque el tiempo que se emplea en crear un \textit{endpoint} local es moderado.
+	\item Complejidad (3): porque existen bibliotecas que facilitan la creación de \textit{endpoints} simples de forma muy rápida e intuitiva.
 	\item Riesgo (1): porque no se esperan imprevistos en esta etapa.
-	\item Story Point: 8
+	\item Story Point: 8.
 \end{itemize}
 \end{itemize}
 
@@ -337,10 +339,10 @@ Se definen las siguientes historias de usuario:
 Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Esquema del funcionamiento de cada pieza del pipeline de IA.
+	\item Esquema del funcionamiento de cada pieza del \textit{pipeline} de IA.
 	\item Notebook con el código del algoritmo.
 	\item Informe de avance.
-	\item Informe final/memoria técnica del proyecto
+	\item Informe final/memoria técnica del proyecto.
 \end{itemize}
 
 \section{9. Desglose del trabajo en tareas}
@@ -350,32 +352,32 @@ Los entregables del proyecto son:
 \item Preparación de los datos. (160 h)
 	\begin{enumerate}
 	\item Análisis preliminar de las imágenes. (30 h)
-	\item Estudio y busqueda de herramientas de etiquetado de elementos en imagenes. (35 h)
-	\item Etiquetado de imagenes. (40 h)
-	\item Aplicar data aumentation. (25 h)
+	\item Estudio y búsqueda de herramientas de etiquetado de elementos en imágenes. (35 h)
+	\item Etiquetado de imágenes. (40 h)
+	\item Aplicar \textit{data augmentation}. (25 h)
 	\item Aplicar redimensionamiento. (20 h)
-	\item Cargar dataset (10 h)
+	\item Cargar dataset. (10 h)
 	\end{enumerate}
 \item Desarrollo del modelo de IA. (200 h)
 	\begin{enumerate}
-	\item Estudio y busqueda de modelos preentrenados. (40 h)
-	\item Estudio de arquitecturas de Deep Learning viables. (40 h)
-	\item Desarrollo del modelo usando transfer learning. (40 h)
+	\item Estudio y búsqueda de modelos preentrenados. (40 h)
+	\item Estudio de arquitecturas de \textit{deep learning} viables. (40 h)
+	\item Desarrollo del modelo usando \textit{transfer learning}. (40 h)
 	\item Entrenamiento del modelo. (40 h)
-	\item Desarrollo de endpoint. (40 h)
+	\item Desarrollo de \textit{endpoint}. (40 h)
 	\end{enumerate}
 \item Prueba de desempeño del modelo. (120 h)
 	\begin{enumerate}
 	\item Pruebas sobre datos de validación.  (40 h)
-	\item Pruebas sobre el endpoint del modelo. (40 h)
-	\item Ajuste y optimización de hiperparametros. (40 h)
+	\item Pruebas sobre el \textit{endpoint} del modelo. (40 h)
+	\item Ajuste y optimización de hiperparámetros. (40 h)
 	\end{enumerate}
 \item Tareas de documentación. (140 h)
 	\begin{enumerate}
-	\item Elaboración de diagramas (20 h)
+	\item Elaboración de diagramas. (20 h)
 	\item Redacción del informe de avance. (40 h)
-	\item Redacción de la memoría final del proyecto (40 h)
-	\item Preparación de presentación del proyecto (40 h)
+	\item Redacción de la memoria final del proyecto. (40 h)
+	\item Preparación de presentación del proyecto. (40 h)
 	\end{enumerate}
 \end{enumerate}
 
@@ -420,7 +422,7 @@ El diagrama de Gantt se muestra separado en dos partes. La figura 3 contiene el 
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/TableG.png}
+\includegraphics[width=.8\textwidth]{./Figuras/TableG3.png}
 \caption{Desglose de tareas}
 \label{fig:diagBloques}
 \end{figure}
