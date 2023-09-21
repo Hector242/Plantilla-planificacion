@@ -501,6 +501,78 @@ Descripción &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
+a) Identificación de los riesgos y estimación de sus consecuencias: en esta sección se listan los riesgos que podrían afectar negativamente los planes previstos para este proyecto.
+
+Para el análisis se asignan las siguientes valoraciones:
+
+\begin{itemize}
+\item Severidad (S) de 1 (bajo) a 10 (alto).
+\item Probabilidad de ocurrencia (O) de 1 (bajo) a 10 (alto).
+\end{itemize}
+
+Riesgo 1. Datos insuficientes. La cantidad de imágenes proporcionadas es insuficiente o su calidad no es la adecuada para entrenar el modelo.
+
+\begin{itemize}
+\item Severidad (S): 10. El exito del modelo esta directamente relacionado con la calidad y cantidad de imágenes que se le proporcione. 
+
+\item Probabilidad de ocurrencia (O): 8. El INTA cuenta con un conjunto pequeño de imágenes. 
+\end{itemize}
+
+Riesgo 2. Etiquetar incorrectamente los estados fenológicos de la flor por falta de conocimiento en el área.
+
+\begin{itemize}
+\item Severidad (S): 10. El mal etiquetado del conjunto de imágenes influirá en la capacidad del modelo de poder identificar correctamente el estado de las flores. 
+
+\item Probabilidad de ocurrencia (O): 4. El INTA estará colaborando activamente en el etiquetado para aportar su conocimiento experto en el área. 
+\end{itemize}
+
+Riesgo 3. Falta de recursos para entrenar el modelo de aprendizaje.
+
+\begin{itemize}
+\item Severidad (S): 10. La disponibilidad de recursos de computo y memoria es esencial para que el modelo pueda finalizar su entrenamiento y pueda ejecutar sus predicciones. 
+
+\item Probabilidad de ocurrencia (O): 7. Al usar Google Colab es probable encontrar falta de disponibilidad de recursos. 
+\end{itemize}
+
+Riesgo 4. Bajo desempeño del modelo de aprendizaje para detectar los estados de la flor.
+
+\begin{itemize}
+\item Severidad (S): 8. No poder detectar correctamente los estados de la flor de duraznero conlleva al no cumplimiento del objectivo principal. 
+
+\item Probabilidad de ocurrencia (O): 3. La probabilidad de que esto ocurra es baja porque actualmente existen muchos trabajos de investigación que han logrado la detección de plantas en imágenes, lo cual aumenta la posibilidad de que este algoritmo funcione correctamente. 
+\end{itemize}
+
+Riesgo 5. Mala interpretación de los requerimientos del cliente y el algoritmo no presta el servicio esperado.
+
+\begin{itemize}
+\item Severidad (S): 5. Si el algoritmo no funciona como se desea por una mala interpretación es posible reentrenar el modelo o incluso reemplazarlo, pero afectaría directamente al cronograma del proyecto. 
+
+\item Probabilidad de ocurrencia (O): 3. La probabilidad de que esto ocurra es baja porque la comunicación con el cliente será continua y los avances se irán informando cada 2 semanas, de forma de detectar cualquier error de este estilo. 
+\end{itemize}
+
+b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN= S x O)
+
+\begin{table}[htpb]
+\centering
+\begin{tabularx}{\linewidth}{@{}|X|c|c|c|c|c|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
+1. Datos insuficientes.      &   &   &     &    &    &      \\ \hline
+2. Etiquetar incorrectamente los estados fenológicos de la flor.      &   &   &     &    &    &      \\ \hline
+3. Falta de recursos.       &   &   &     &    &    &      \\ \hline
+4. Bajo desempeño del modelo de aprendizaje.       &   &   &     &    &    &      \\ \hline
+5. Mala interpretación de los requerimientos.       &   &   &     &    &    &      \\ \hline
+\end{tabularx}%
+\end{table}
+
+Criterio adoptado: 
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+
+Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
+
+c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
+
 \begin{consigna}{red}
 a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
  
