@@ -249,9 +249,10 @@ Para el desarrollo del presente proyecto se supone que:
 	\item Requerimientos funcionales
 		\begin{enumerate}
 			\item El sistema tomará como entrada imágenes de varetas de durazneros en formato JPG.			
-			\item El algoritmo debe detectar la presencia de las varetas de los durazneros e identificar el tipo de flor que posee.			        \item El algoritmo debe identificar el estado fenológico de cada flor de duraznero en la vareta. Este estado puede ser F de flor abierta, E de flor cerrada o G de flor sin pétalos. 
+			\item El algoritmo debe detectar la presencia de las varetas de los durazneros e identificar el tipo de flor que posee.			        
+			\item El algoritmo debe identificar el estado fenológico de cada flor de duraznero en la vareta. Este estado puede ser F de flor abierta, E de flor cerrada o G de flor sin pétalos. 
 			\item El algoritmo debe determinar la cantidad de flores por centímetro de vareta.
-			\item El sistema debe entregar como resultado un archivo en formato JSON con los datos detectados por el algoritmo.
+			\item El sistema debe entregar como resultado un archivo en formato JSON con los datos detectados por el algoritmo y una imagen donde se puedan visualizar las detecciones.
 			\item El sistema debe funcionar en una computadora local.
 		\end{enumerate}
 	\item Requerimientos de diseño e implementación
@@ -606,39 +607,106 @@ Plan de mitigación: para mitigar este riesgo, se utilizará Google Colab pro qu
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Elija al menos diez requerientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
-
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
+Req \#1.2. El algoritmo debe detectar la presencia de las varetas de los durazneros e identificar el tipo de flor que posee.
 
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
+	\item Verificación. Proporcionar una imagen al modelo y verificar visualmente  que a la salida, tanto la imagen como el archivo JSON contienen la correcta detección de la vareta y su tipo de flor.
+	
+	\item Validación. Procesar una foto de vareta de duraznero con el modelo de IA y obtener a la salida el tipo de flor que posee la vareta. 
 \end{itemize}
 
+Req \#1.3. El algoritmo debe identificar el estado fenológico de cada flor de duraznero en la vareta. Este estado puede ser F de flor abierta, E de flor cerrada o G de flor sin pétalos.
+
+\begin{itemize}
+	\item Verificación. Proporcionar una imagen al modelo y verificar visualmente  que a la salida, tanto la imagen como el archivo JSON contienen los estados de las flores correctamente identificados.
+	
+	\item Validación. Procesar una foto de vareta de duraznero con el modelo de IA y obtener a la salida una imagen y un archivo JSON con la información de los estados fenológicos de las flores. 
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
+Req \#1.4. El algoritmo debe determinar la cantidad de flores por centímetro de vareta.
 
-\end{consigna}
+\begin{itemize}
+	\item Verificación. Proporcionar una imagen al modelo y revisar en el archivo JSON de salida que el número total de flores detectadas por centrimetro de vareta, coincida con lo que se visualiza en la imagen.
+	
+	\item Validación.Procesar una foto de vareta de duraznero con el modelo de IA y extraer la cantidad de flores por centimetro de vareta sin errores. 
+\end{itemize}
+
+Req \#1.5. El sistema debe entregar como resultado un archivo en formato JSON con los datos detectados por el algoritmo y una imagen donde se puedan visualizar las detecciones.
+
+\begin{itemize}
+	\item Verificación. Pasar una foto de vareta de duraznero por el algoritmo y verificar que a su salida se obtenga un archivo en formato JSON con la información extraída de la imagen y a su vez se tenga una imagen con las detecciones correspondientes sin errores.
+	
+	\item Validación. Procesar una foto de vareta de duraznero con el algoritmo y obtener un JSON con las características de las flores y adicionalmente la imagen con las detecciones. 
+\end{itemize}
+
+Req \#1.6. El sistema debe funcionar en una computadora local.
+
+\begin{itemize}
+	\item Verificación. Dejar funcionando el modelo de aprendizaje en una computadora local y que este no arroje ningún tipo de error.
+	
+	\item Validación. Activar el modelo de aprendizaje en la computadora local y empezar a correr inferencias. 
+\end{itemize}
+
+Req \#2.1. El diseño debe ser modular.
+
+\begin{itemize}
+	\item Verificación. Visualizar en la \textit{notebook} que cada parte del \textit{pipeline} de procesamiento, este correctamente seccionado por funciones.
+	
+	\item Validación. Inspeccionar que el código sea modular. 
+\end{itemize}
+
+Req \#3.2. Las métricas que se utilizarán para la evaluación del modelo serán: \textit{mean average precision} (mAP), \textit{matriz de confusión}, \textit{precision}, \textit{recall}, \textit{F1}, \textit{accuracy}.
+
+\begin{itemize}
+	\item Verificación. Visualizar que al final del entrenamiento del modelo, las métricas con las que se evalua al sistema, sean las mencionadas en los requerimientos.
+	
+	\item Validación. Inspeccionar en la \textit{notebook} las métricas que definen el rendimiento del mejor modelo. 
+\end{itemize}
+
+Req \#4.1. El funcionamiento del sistema debe estar correctamente explicado y documentado.
+
+\begin{itemize}
+	\item Verificación. No aplica.
+	
+	\item Validación. Inspeccionar la documentación proporcionada. 
+\end{itemize}
+
+Req \#4.2. El código en la notebook estará correctamente comentado como parte de buenas prácticas del desarrollo de software.
+
+\begin{itemize}
+	\item Verificación. Revisar que cada sección del código este correctamente comentada.
+	
+	\item Validación. Inspeccionar los comentarios en el código y verificar que sean comprensibles. 
+\end{itemize}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+A continuación se describen las pautas que darán cierre al proyecto:
 
 \begin{itemize}
 	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
+	
+	 \begin{itemize}
+	 \item El responsable del proyecto comparará la planificación inicial del cronograma y los tiempos de ejecución reales del proyecto.
+	 
+	 \item El responsable del proyecto verificará si las tareas planteadas inicialmente correspondieron a la ejecución real.
+	  \end{itemize}
 	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
+	
+	 \begin{itemize}
+	 \item El responsable del proyecto con ayuda de su director examinarán los procesos fallidos y exitosos que se dieron durante el desarrollo del proyecto.
+	 
+	  \item El responsable del proyecto documentará todos los procesos fallidos y exitosos que se obtuvieron. 
+	  
+	  \end{itemize}
 	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
+	
+	  \begin{itemize}
+	 \item Posterior a la defensa pública, el responsable del proyecto se encargará de dar el reconocimiento al mérito de cada uno de los involucrados en este proyecto.
+	 
+	  \end{itemize}
 \end{itemize}
-
-\end{consigna}
 
 
 \end{document}
