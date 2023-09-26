@@ -516,7 +516,7 @@ Para el análisis se asignan las siguientes valoraciones:
 Riesgo 1. Datos insuficientes. La cantidad de imágenes proporcionadas es insuficiente o su calidad no es la adecuada para entrenar el modelo.
 
 \begin{itemize}
-\item Severidad (S): 10. El exito del modelo esta directamente relacionado con la calidad y cantidad de imágenes que se le proporcione. 
+\item Severidad (S): 10. El éxito del modelo esta directamente relacionado con la calidad y cantidad de imágenes que se le proporcione. 
 
 \item Probabilidad de ocurrencia (O): 8. El INTA cuenta con un conjunto pequeño de imágenes. 
 \end{itemize}
@@ -548,7 +548,7 @@ Riesgo 4. Bajo desempeño del modelo de aprendizaje para detectar los estados de
 Riesgo 5. Mala interpretación de los requerimientos del cliente y el algoritmo no presta el servicio esperado.
 
 \begin{itemize}
-\item Severidad (S): 5. Si el algoritmo no funciona como se desea por una mala interpretación es posible reentrenar el modelo o incluso reemplazarlo, pero afectaría directamente al cronograma del proyecto. 
+\item Severidad (S): 5. Si el algoritmo no funciona como se desea debido a una mala interpretación, es posible reentrenar el modelo o incluso reemplazarlo, pero afectaría directamente al cronograma del proyecto. 
 
 \item Probabilidad de ocurrencia (O): 3. La probabilidad de que esto ocurra es baja porque la comunicación con el cliente será continua y los avances se irán informando cada 2 semanas, de forma de detectar cualquier error de este estilo. 
 \end{itemize}
@@ -570,7 +570,7 @@ Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 30.
+se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 30.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
@@ -581,9 +581,9 @@ Riesgo 1.
 Plan de mitigación: para mitigar este riesgo se tienen tres alternativas. Por un lado, se puede utilizar algoritmos preentrenados usando \textit{transfer learning}, se puede utilizar \textit{data augmentation} o se pueden tomar más imágenes de varetas de durazanero. Ninguna de estas opciones son excluyentes entre si.
 
 \begin{itemize}
-\item Severidad (S): 6. La severidad disminuye, debido a que el uso de modelos preentrenados en este tipo de problemas normalmente logra minimizar los efectos de la insuficiencia de datos.
+\item Severidad (S): 6. La severidad disminuye debido a que el uso de modelos preentrenados en este tipo de problemas normalmente logra minimizar los efectos de la insuficiencia de datos.
 
-\item Probabilidad de ocurrencia (O): 5. Las probabilidades de que ocurra este riesgo disminuye debido a que lo propuesto en el plan de mitigación es un procedimiento probado y funcional. 
+\item Probabilidad de ocurrencia (O): 5. Las probabilidades de que ocurra este riesgo disminuye debido a que esta sugerencia es un procedimiento probado y funcional. 
 \end{itemize}
 
 Riesgo 2. 
@@ -603,7 +603,7 @@ Plan de mitigación: para mitigar este riesgo, se utilizará Google Colab pro qu
 \begin{itemize}
 \item Severidad (S): 10. La severidad se mantiene.
 
-\item Probabilidad de ocurrencia (O): 2. Las probabilidades de que ocurra este riesgo disminuye dado que se aumenta la cantidad de recursos disponibles con la version pro de Google Colab. 
+\item Probabilidad de ocurrencia (O): 2. Las probabilidades de que ocurra este riesgo disminuye dado que se aumenta la cantidad de recursos disponibles con la versión pro de Google Colab. 
 \end{itemize}
 
 \section{14. Gestión de la calidad}
@@ -636,7 +636,7 @@ Req \#1.4. El algoritmo debe determinar la cantidad de flores por centímetro de
 Req \#1.5. El sistema debe entregar como resultado un archivo en formato JSON con los datos detectados por el algoritmo y una imagen donde se puedan visualizar las detecciones.
 
 \begin{itemize}
-	\item Verificación. Pasar una foto de vareta de duraznero por el algoritmo y verificar que a su salida se obtenga un archivo en formato JSON con la información extraída de la imagen y a su vez se tenga una imagen con las detecciones correspondientes sin errores.
+	\item Verificación. Pasar una imagen por el modelo y a la salida obtener un archivo JSON y una imagen con las detecciones.
 	
 	\item Validación. Procesar una foto de vareta de duraznero con el algoritmo y obtener un JSON con las características de las flores y adicionalmente la imagen con las detecciones. 
 \end{itemize}
