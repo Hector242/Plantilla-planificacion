@@ -74,6 +74,8 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 Se completa hasta el punto 9 inclusive. & 12 de septiembre 2023 \\ \hline
 3      & Aplicación de las correcciones de la revisión 2. \newline
 Se completa hasta el punto 12 inclusive. & 18 de septiembre 2023 \\ \hline
+4      & Aplicación de las correcciones de la revisión 3. \newline
+Se completa hasta el punto 15 inclusive. & 25 de septiembre 2023 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline                                                    
 %3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
@@ -94,7 +96,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en desarrollar un algoritmo que identifique flores y su estado a partir de fotos de varetas, y tendrá un presupuesto preliminar estimado de 620 horas de trabajo y US\$19.710 de costos, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en desarrollar un algoritmo que identifique flores y su estado a partir de fotos de varetas, y tendrá un presupuesto preliminar estimado de 620 horas de trabajo y \$13.939.500 pesos argentinos de costos, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -263,7 +265,7 @@ Para el desarrollo del presente proyecto se supone que:
 	\item Requerimiento de evaluación y prueba
 	\begin{enumerate}
 			\item El modelo se evaluará con imágenes provenientes del mismo dataset de imágenes entregado por el cliente.
-			 \item Las métricas que se utilizarán para la evaluación del modelo serán: \textit{mean average precision} (mAP), \textit{matriz de confusión}, \textit{precision}, \textit{recall}, \textit{F1}, \textit{accuracy}.
+			 \item Las métricas que se utilizarán para la evaluación del modelo serán: \textit{mean average precision} (mAP), matriz de confusión, \textit{precision}, \textit{recall}, \textit{F1}, \textit{accuracy}.
 		\end{enumerate}
 	\item Requerimientos de documentación
 	\begin{enumerate}
@@ -315,7 +317,7 @@ Se definen las siguientes historias de usuario:
 	\begin{itemize}
 	\item Esfuerzo (3): porque el tiempo que se requiere para el desarrollo del modelo y su correcto funcionamiento puede ser medianamente largo.
 	\item Complejidad (5): porque se requiere de un sólido conocimiento en modelos de aprendizaje basados en visión por computadora. 
-	\item Riesgo (5): porque se pueden presentar imprevistos con las imagenes proporcionadas y compatibilidad con el modelo.
+	\item Riesgo (5): porque se pueden presentar imprevistos con las imágenes proporcionadas y compatibilidad con el modelo.
 	\item Story Point: 13.
 \end{itemize}
 	\item Como desarrollador de IA, quiero contar con un código ordenado que siga las buenas prácticas del desarrollo del software, que esté bien documentado y que esté correctamente versionado, para poder continuar con su mantenimiento y mejora a través del tiempo.
@@ -395,10 +397,10 @@ Cantidad total de horas: 620 h.
 La figura 2 ilustra el diagrama de \textit{Activity on Node}. Las tareas están agrupadas por colores y siguiendo la estructura detallada en la sección anterior:
 
 \begin{enumerate}
-	\item Celeste: Preparación de los datos.
-	\item Amarillo: Desarrollo del modelo de IA.
-	\item Lila: Prueba de desempeño del modelo.
-	\item Verde: Tareas de documentación.
+	\item Celeste: preparación de los datos.
+	\item Amarillo: desarrollo del modelo de IA.
+	\item Lila: prueba de desempeño del modelo.
+	\item Verde: tareas de documentación.
 \end{enumerate}
 
 El camino crítico, cuya duración es de 450 horas, se muestra resaltado en color rojo.
@@ -424,7 +426,7 @@ El diagrama de Gantt se muestra separado en dos partes. La figura 3 contiene el 
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=.8\textwidth]{./Figuras/TableG3.png}
-\caption{Desglose de tareas}
+\caption{Desglose de tareas.}
 \label{fig:diagBloques}
 \end{figure}
 
@@ -444,7 +446,7 @@ El diagrama de Gantt se muestra separado en dos partes. La figura 3 contiene el 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-A continuación se presenta el presupuesto detallado del proyecto expresado en dólares americanos:
+A continuación se presenta el presupuesto detallado del proyecto expresado en pesos argentinos:
 
 \begin{table}[htpb]
 \centering
@@ -457,18 +459,18 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-   \multicolumn{1}{|l|}{Horas del responsable} 
+   \multicolumn{1}{|l|}{Horas de ingeniería} 
  &
   \multicolumn{1}{c|}{620} &
-  \multicolumn{1}{c|}{US\$30} &
-  \multicolumn{1}{c|}{US\$18.600} \\ \hline
+  \multicolumn{1}{c|}{\$21.875} &
+  \multicolumn{1}{c|}{\$13.562.500} \\ \hline
    \multicolumn{1}{|l|}{Computadora personal} 
  &
   \multicolumn{1}{c|}{1} &
-  \multicolumn{1}{c|}{US\$1000} &
-  \multicolumn{1}{c|}{US\$1000} \\ \hline
+  \multicolumn{1}{c|}{\$300.000} &
+  \multicolumn{1}{c|}{\$300.000} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{US\$19.600} \\ \hline
+  \multicolumn{1}{c|}{\$13.862.500} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -479,21 +481,21 @@ Descripción &
 \multicolumn{1}{|l|}{Licencia de Roboflow} &
    \multicolumn{1}{|c|}{1}
    &
-   \multicolumn{1}{|c|}{US\$100}
+   \multicolumn{1}{|c|}{\$70.000}
    &
-   \multicolumn{1}{|c|}{US\$100}
+   \multicolumn{1}{|c|}{\$70.000}
    \\ \hline
-\multicolumn{1}{|l|}{Google colab pro} &
+\multicolumn{1}{|l|}{Google Colab pro} &
 \multicolumn{1}{|c|}{1}
    &
-   \multicolumn{1}{|c|}{US\$10}
+   \multicolumn{1}{|c|}{\$7.000}
    &
-   \multicolumn{1}{|c|}{US\$10}
+   \multicolumn{1}{|c|}{\$7.000}
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{US\$110} \\ \hline
+  \multicolumn{1}{c|}{\$77.000} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &  \multicolumn{1}{c|}{US\$19.710} 
+\multicolumn{3}{|c|}{TOTAL} &  \multicolumn{1}{c|}{\$13.939.500} 
    \\ \hline
 \end{tabularx}%
 \end{table}
@@ -655,7 +657,7 @@ Req \#2.1. El diseño debe ser modular.
 	\item Validación. Inspeccionar que el código sea modular. 
 \end{itemize}
 
-Req \#3.2. Las métricas que se utilizarán para la evaluación del modelo serán: \textit{mean average precision} (mAP), \textit{matriz de confusión}, \textit{precision}, \textit{recall}, \textit{F1}, \textit{accuracy}.
+Req \#3.2. Las métricas que se utilizarán para la evaluación del modelo serán: \textit{mean average precision} (mAP), matriz de confusión, \textit{precision}, \textit{recall}, \textit{F1}, \textit{accuracy}.
 
 \begin{itemize}
 	\item Verificación. Visualizar que al final del entrenamiento del modelo, las métricas con las que se evalua al sistema, sean las mencionadas en los requerimientos.
