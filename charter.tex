@@ -40,7 +40,7 @@
  
 \fechaINICIO{22 de agosto de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
 \fechaFINALPlan{10 de octubre de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{14 de marzo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaFINALTrabajo{abril de 2024}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -76,6 +76,7 @@ Se completa hasta el punto 9 inclusive. & 12 de septiembre 2023 \\ \hline
 Se completa hasta el punto 12 inclusive. & 18 de septiembre 2023 \\ \hline
 4      & Aplicación de las correcciones de la revisión 3. \newline
 Se completa hasta el punto 15 inclusive. & 25 de septiembre 2023 \\ \hline
+4.1      & Aplicación de las correcciones de la revisión 4. & 1 de octubre 2023 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline                                                    
 %3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
@@ -545,7 +546,7 @@ Riesgo 4. Bajo desempeño del modelo de aprendizaje para detectar los estados de
 \item Probabilidad de ocurrencia (O): 3. La probabilidad de que esto ocurra es baja porque actualmente existen muchos trabajos de investigación que han logrado la detección de plantas en imágenes, lo cual aumenta la posibilidad de que este algoritmo funcione correctamente. 
 \end{itemize}
 
-Riesgo 5. Mala interpretación de los requerimientos del cliente y el algoritmo no presta el servicio esperado.
+Riesgo 5. Mala interpretación de los requerimientos del cliente y que el algoritmo no preste el servicio esperado.
 
 \begin{itemize}
 \item Severidad (S): 5. Si el algoritmo no funciona como se desea debido a una mala interpretación, es posible reentrenar el modelo o incluso reemplazarlo, pero afectaría directamente al cronograma del proyecto. 
@@ -578,12 +579,12 @@ c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo
 
 Riesgo 1. 
 
-Plan de mitigación: para mitigar este riesgo se tienen tres alternativas. Por un lado, se puede utilizar algoritmos preentrenados usando \textit{transfer learning}, se puede utilizar \textit{data augmentation} o se pueden tomar más imágenes de varetas de durazanero. Ninguna de estas opciones son excluyentes entre si.
+Plan de mitigación: para mitigar este riesgo se tienen tres alternativas. Por un lado, se puede utilizar algoritmos preentrenados usando \textit{transfer learning}, se puede utilizar \textit{data augmentation} o se pueden tomar más imágenes de varetas de durazanero. Ninguna de estas opciones son excluyentes entre sí.
 
 \begin{itemize}
-\item Severidad (S): 6. La severidad disminuye debido a que el uso de modelos preentrenados en este tipo de problemas normalmente logra minimizar los efectos de la insuficiencia de datos.
+\item Severidad (S*): 6. La severidad disminuye debido a que el uso de modelos preentrenados en este tipo de problemas normalmente logra minimizar los efectos de la insuficiencia de datos.
 
-\item Probabilidad de ocurrencia (O): 5. Las probabilidades de que ocurra este riesgo disminuye debido a que esta sugerencia es un procedimiento probado y funcional. 
+\item Probabilidad de ocurrencia (O*): 5. Las probabilidades de que ocurra este riesgo disminuye debido a que esta sugerencia es un procedimiento probado y funcional. 
 \end{itemize}
 
 Riesgo 2. 
@@ -593,7 +594,7 @@ Plan de mitigación: para mitigar este riesgo, se tendrá ayuda de los especiali
 \begin{itemize}
 \item Severidad (S): 10. La severidad se mantiene.
 
-\item Probabilidad de ocurrencia (O): 2. Las probabilidades de que ocurra este riesgo disminuye dado que se tendrá una confirmación o verificación del lado del cliente. 
+\item Probabilidad de ocurrencia (O*): 2. La probabilidad de que ocurra este riesgo disminuye porque se tendrá una confirmación o verificación del lado del cliente. 
 \end{itemize}
 
 Riesgo 3. 
@@ -603,7 +604,7 @@ Plan de mitigación: para mitigar este riesgo, se utilizará Google Colab pro qu
 \begin{itemize}
 \item Severidad (S): 10. La severidad se mantiene.
 
-\item Probabilidad de ocurrencia (O): 2. Las probabilidades de que ocurra este riesgo disminuye dado que se aumenta la cantidad de recursos disponibles con la versión pro de Google Colab. 
+\item Probabilidad de ocurrencia (O*): 2. La probabilidad de que ocurra este riesgo disminuye al aumentar la cantidad de recursos disponibles con la versión pro de Google Colab. 
 \end{itemize}
 
 \section{14. Gestión de la calidad}
@@ -612,73 +613,73 @@ Plan de mitigación: para mitigar este riesgo, se utilizará Google Colab pro qu
 Req \#1.2. El algoritmo debe detectar la presencia de las varetas de los durazneros e identificar el tipo de flor que posee.
 
 \begin{itemize}
-	\item Verificación. Proporcionar una imagen al modelo y verificar visualmente  que a la salida, tanto la imagen como el archivo JSON contienen la correcta detección de la vareta y su tipo de flor.
+	\item Verificación: proporcionar una imagen al modelo y verificar visualmente  que a la salida, tanto la imagen como el archivo en formato JSON contienen la correcta detección de la vareta y su tipo de flor.
 	
-	\item Validación. Procesar una foto de vareta de duraznero con el modelo de IA y obtener a la salida el tipo de flor que posee la vareta. 
+	\item Validación: procesar una foto de vareta de duraznero con el modelo de IA y obtener a la salida el tipo de flor que posee la vareta. 
 \end{itemize}
 
 Req \#1.3. El algoritmo debe identificar el estado fenológico de cada flor de duraznero en la vareta. Este estado puede ser F de flor abierta, E de flor cerrada o G de flor sin pétalos.
 
 \begin{itemize}
-	\item Verificación. Proporcionar una imagen al modelo y verificar visualmente  que a la salida, tanto la imagen como el archivo JSON contienen los estados de las flores correctamente identificados.
+	\item Verificación: proporcionar una imagen al modelo y verificar visualmente  que a la salida, tanto la imagen como el archivo en formato JSON contienen los estados de las flores correctamente identificados.
 	
-	\item Validación. Procesar una foto de vareta de duraznero con el modelo de IA y obtener a la salida una imagen y un archivo JSON con la información de los estados fenológicos de las flores. 
+	\item Validación: procesar una foto de vareta de duraznero con el modelo de IA y obtener a la salida una imagen y un archivo en formato JSON con la información de los estados fenológicos de las flores. 
 \end{itemize}
 
 Req \#1.4. El algoritmo debe determinar la cantidad de flores por centímetro de vareta.
 
 \begin{itemize}
-	\item Verificación. Proporcionar una imagen al modelo y revisar en el archivo JSON de salida que el número total de flores detectadas por centrimetro de vareta, coincida con lo que se visualiza en la imagen.
+	\item Verificación: proporcionar una imagen al modelo y comprobar en el archivo en formato JSON de salida si el número total de flores detectadas por centímetro de vareta coincide con lo que se visualiza en la imagen.
 	
-	\item Validación.Procesar una foto de vareta de duraznero con el modelo de IA y extraer la cantidad de flores por centimetro de vareta sin errores. 
+	\item Validación: procesar una foto de vareta de duraznero con el modelo de IA y extraer la cantidad de flores por centímetro de vareta sin errores. 
 \end{itemize}
 
 Req \#1.5. El sistema debe entregar como resultado un archivo en formato JSON con los datos detectados por el algoritmo y una imagen donde se puedan visualizar las detecciones.
 
 \begin{itemize}
-	\item Verificación. Pasar una imagen por el modelo y a la salida obtener un archivo JSON y una imagen con las detecciones.
+	\item Verificación: pasar una imagen por el modelo y a la salida obtener un archivo en formato JSON y una imagen con las detecciones.
 	
-	\item Validación. Procesar una foto de vareta de duraznero con el algoritmo y obtener un JSON con las características de las flores y adicionalmente la imagen con las detecciones. 
+	\item Validación: procesar una foto de vareta de duraznero con el algoritmo y obtener un archivo en formato JSON con las características de las flores y adicionalmente la imagen con las detecciones. 
 \end{itemize}
 
 Req \#1.6. El sistema debe funcionar en una computadora local.
 
 \begin{itemize}
-	\item Verificación. Dejar funcionando el modelo de aprendizaje en una computadora local y que este no arroje ningún tipo de error.
+	\item Verificación: dejar funcionando el modelo de aprendizaje en una computadora local y que este no arroje ningún tipo de error.
 	
-	\item Validación. Activar el modelo de aprendizaje en la computadora local y empezar a correr inferencias. 
+	\item Validación: activar el modelo de aprendizaje en la computadora local y empezar a correr inferencias. 
 \end{itemize}
 
 Req \#2.1. El diseño debe ser modular.
 
 \begin{itemize}
-	\item Verificación. Visualizar en la \textit{notebook} que cada parte del \textit{pipeline} de procesamiento, este correctamente seccionado por funciones.
+	\item Verificación: visualizar en la \textit{notebook} que cada parte del \textit{pipeline} de procesamiento esté correctamente seccionado por funciones.
 	
-	\item Validación. Inspeccionar que el código sea modular. 
+	\item Validación: inspeccionar que el código sea modular. 
 \end{itemize}
 
 Req \#3.2. Las métricas que se utilizarán para la evaluación del modelo serán: \textit{mean average precision} (mAP), matriz de confusión, \textit{precision}, \textit{recall}, \textit{F1}, \textit{accuracy}.
 
 \begin{itemize}
-	\item Verificación. Visualizar que al final del entrenamiento del modelo, las métricas con las que se evalua al sistema, sean las mencionadas en los requerimientos.
+	\item Verificación: visualizar que al final del entrenamiento del modelo, las métricas con las que se evalua al sistema, sean las mencionadas en los requerimientos.
 	
-	\item Validación. Inspeccionar en la \textit{notebook} las métricas que definen el rendimiento del mejor modelo. 
+	\item Validación: inspeccionar en la \textit{notebook} las métricas que definen el rendimiento del mejor modelo. 
 \end{itemize}
 
 Req \#4.1. El funcionamiento del sistema debe estar correctamente explicado y documentado.
 
 \begin{itemize}
-	\item Verificación. No aplica.
+	\item Verificación: no aplica.
 	
-	\item Validación. Inspeccionar la documentación proporcionada. 
+	\item Validación: inspeccionar la documentación proporcionada. 
 \end{itemize}
 
-Req \#4.2. El código en la notebook estará correctamente comentado como parte de buenas prácticas del desarrollo de software.
+Req \#4.2. El código en la \textit{notebook} estará correctamente comentado como parte de buenas prácticas del desarrollo de software.
 
 \begin{itemize}
-	\item Verificación. Revisar que cada sección del código este correctamente comentada.
+	\item Verificación: revisar que cada sección del código este correctamente comentada.
 	
-	\item Validación. Inspeccionar los comentarios en el código y verificar que sean comprensibles. 
+	\item Validación: inspeccionar los comentarios en el código y verificar que sean comprensibles. 
 \end{itemize}
 
 \section{15. Procesos de cierre}    
